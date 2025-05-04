@@ -1,0 +1,39 @@
+@use "../../styles/variables.scss";
+
+.header {
+  background: variables.$blue-default;
+
+  & > div {
+    max-width: 1120px;
+    margin: 0 auto;
+
+    padding: 2rem 1rem 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      font: 16px;
+      color: #fff;
+      background: variables.$blue-light;
+      border: 0;
+      padding: 0 32px;
+      border-radius: 4px;
+      height: 48px;
+      transition: filter 0.2s;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: variables.$screen-sm) {
+  .header {
+    & > div {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+}

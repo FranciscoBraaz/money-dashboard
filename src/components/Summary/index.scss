@@ -1,0 +1,34 @@
+@use "../../styles/variables.scss";
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: -110px;
+  overflow-x: auto;
+
+  div {
+    background: variables.$white;
+    padding: 24px 32px;
+    border-radius: 0.25px;
+    color: variables.$text-primary;
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    strong {
+      display: block;
+      font-weight: 500;
+      margin-top: 16px;
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    &.highlight-background {
+      background: variables.$green-default;
+      color: #fff;
+    }
+  }
+}
