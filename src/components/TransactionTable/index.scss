@@ -27,13 +27,30 @@
         color: variables.$text-primary;
       }
 
-      &.deposit {
+      &.deposit,
+      &.transfer_received {
         color: variables.$green-default;
       }
 
-      &.withdraw {
+      &.transfer_sended {
         color: variables.$red-default;
       }
     }
+  }
+}
+
+.transaction-table__undo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: variables.$red-default;
+  background-color: transparent;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: variables.$red-default;
+    color: variables.$white;
   }
 }
