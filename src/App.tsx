@@ -7,6 +7,8 @@ import "./styles/index.scss";
 import { ConfigProvider } from "antd";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import SignIn from "./containers/SignIn";
+import { RoutesLayout } from "./components/RoutesLayout";
+import { SignUp } from "./containers/SignUp";
 
 function App() {
   const queryClient = new QueryClient();
@@ -28,7 +30,15 @@ function App() {
         {/* <Header /> */}
         <Router>
           <Routes>
-            <Route path="/" element={<SignIn />} />
+            <Route path="/login" element={<RoutesLayout isPublic />}>
+              <Route path="" element={<SignIn />} />
+            </Route>
+            <Route path="/cadastro" element={<RoutesLayout isPublic />}>
+              <Route path="" element={<SignUp />} />
+            </Route>
+            <Route path="/" element={<RoutesLayout />}>
+              <Route path="/" element={<Home />} />
+            </Route>
           </Routes>
         </Router>
       </ConfigProvider>

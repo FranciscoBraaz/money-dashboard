@@ -1,3 +1,5 @@
+@use "../../styles/variables.scss";
+
 .form-wrapper {
   background-color: #fff;
   padding: 64px;
@@ -24,15 +26,15 @@
   width: fit-content;
   margin-bottom: 24px;
   padding: 0;
-  color: #00b8c4;
+  color: variables.$blue-default;
 
   &:hover {
-    color: #00b8c4 !important;
+    color: variables.$blue-default !important;
     background-color: transparent !important;
   }
 
   & svg > path {
-    stroke: #00b8c4;
+    stroke: variables.$blue-default;
   }
 }
 

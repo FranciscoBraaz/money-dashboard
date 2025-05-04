@@ -1,0 +1,41 @@
+@use "../../styles/variables.scss";
+
+.sign-up {
+  background-color: #fff;
+  width: 100%;
+  min-height: 100vh;
+
+  a {
+    font-weight: 600;
+  }
+
+  & form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.sign-up__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up__flex-container {
+  & .ant-form-item {
+    flex: 1;
+  }
+}
+
+.sign-up__checkbox {
+  & a {
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sign-up__flex-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
