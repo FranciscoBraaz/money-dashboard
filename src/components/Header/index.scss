@@ -12,10 +12,14 @@
     align-items: center;
     justify-content: space-between;
 
+    & > section {
+      display: flex;
+      gap: 8px;
+    }
+
     button {
       font: 16px;
       color: #fff;
-      background: variables.$blue-light;
       border: 0;
       padding: 0 32px;
       border-radius: 4px;
@@ -24,6 +28,14 @@
 
       &:hover {
         filter: brightness(0.9);
+      }
+
+      &:first-child {
+        background: variables.$green-default;
+      }
+
+      &:last-child {
+        background: variables.$blue-light;
       }
     }
   }

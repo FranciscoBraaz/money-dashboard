@@ -4,4 +4,8 @@ function formatDate(dateValue: string) {
   return formatted;
 }
 
-export { formatDate };
+function onlyNumbers(value: string) {
+  return value.replace(/\D/g, "");
+}
+
+export { formatDate, onlyNumbers };
