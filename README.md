@@ -3,6 +3,8 @@
 ## Sobre o projeto
 Aplicação desenvolvida com o objetivo de praticar os conhecimentos em React e Typescript.
 
+## </> Api do projeto: [Money Api](https://github.com/FranciscoBraaz/money-api)
+
 ##  🔽 Veja funcionando: [MoneyDashboard](https://moneydashboard-project.netlify.app/login)
 
 ![banner-monye-2](https://github.com/user-attachments/assets/93676cfc-1f8e-483d-bcd4-a3404791ba2a)
