@@ -5,6 +5,9 @@ Aplicação desenvolvida com o objetivo de praticar os conhecimentos em React e 
 
 ##  🔽 Veja funcionando: [MoneyDashboard](https://moneydashboard-project.netlify.app/login)
 
+![banner-money](https://github.com/user-attachments/assets/1703d939-9449-4f74-a546-9f8ac6233c64)
+
+
 ### Arquitetura
 
 ```
