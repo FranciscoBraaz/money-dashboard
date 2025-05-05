@@ -1,7 +1,7 @@
 import { Layout, Form } from "antd";
 
 // Custom hooks
-// import { useSignIn } from "./hooks/useLogin";
+import { useSignIn } from "./hooks/useSignIn";
 
 // Components
 import { FormWrapper } from "../../components/FormWrapper";
@@ -11,7 +11,7 @@ import { FormInput } from "../../components/FormInput";
 import "./index.scss";
 
 function SignIn() {
-  // const { isLoading, handleSignIn } = useSignIn();
+  const { isLoading, handleSignIn } = useSignIn();
 
   return (
     <Layout>
@@ -22,12 +22,12 @@ function SignIn() {
           link={{ text: "Cadastre-se gratuitamente", to: "/cadastro" }}
           formId="sign-in"
           buttonText="Entrar na plataforma"
-          // isLoading={isLoading}
+          isLoading={isLoading}
         >
           <Form
             id="sign-in"
             initialValues={{ email: "", passowrd: "", remember: true }}
-            // onFinish={handleSignIn}
+            onFinish={handleSignIn}
           >
             <Form.Item
               name="email"

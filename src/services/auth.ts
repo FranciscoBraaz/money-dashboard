@@ -11,3 +11,13 @@ export async function register({
 }) {
   await api.post("/users", { name, email, password });
 }
+
+export async function login({
+  email,
+  password,
+}: {
+  email: string;
+  password: string;
+}) {
+  return api.post("/users/login", { email, password });
+}
