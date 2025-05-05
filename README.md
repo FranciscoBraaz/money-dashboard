@@ -34,6 +34,11 @@ Aplicação desenvolvida com o objetivo de praticar os conhecimentos em React e 
 - SASS
 - Ant Design
 
+### Testando aplicação
+Usuário já criado para testes (É possível criar outros usuários):
+E-mail: teste3@gmail.com
+Senha: 12345678
+
 ## 👷  Executando o projeto
  #### Clone o repositório:
   ```
