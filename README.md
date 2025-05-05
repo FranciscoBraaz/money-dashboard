@@ -3,10 +3,11 @@
 ## Sobre o projeto
 Aplicação desenvolvida com o objetivo de praticar os conhecimentos em React e Typescript.
 
+## </> Api do projeto: [Money Api](https://github.com/FranciscoBraaz/money-api)
+
 ##  🔽 Veja funcionando: [MoneyDashboard](https://moneydashboard-project.netlify.app/login)
 
-![banner-money](https://github.com/user-attachments/assets/1703d939-9449-4f74-a546-9f8ac6233c64)
-
+![banner-monye-2](https://github.com/user-attachments/assets/93676cfc-1f8e-483d-bcd4-a3404791ba2a)
 
 ### Arquitetura
 
@@ -33,6 +34,18 @@ Aplicação desenvolvida com o objetivo de praticar os conhecimentos em React e 
 - SASS
 - Ant Design
 
+### 🛠️ Testando aplicação
+Usuários já criados para facilitar testes (É possível criar outros usuários):
+- Usuário 1:
+  - E-mail: teste3@gmail.com
+  - Senha: 12345678
+  - Conta: 3025338
+- Usuário 2:
+  - E-mail: teste@gmail.com
+  - Senha: 12345678
+  - Conta: 9530239
+
+
 ## 👷  Executando o projeto
  #### Clone o repositório:
   ```
@@ -44,7 +57,7 @@ cd money-dashboard
 ```
 #### Criar arquivo .env na raíz do projeto
 ```
-VITE_API_URL = <URL LOCAL DA SUA API> 
+VITE_API_URL=http://localhost:3001
 ```
 #### Baixar as dependências
 ```
