@@ -36,11 +36,11 @@ Aplicação desenvolvida com o objetivo de praticar os conhecimentos em React e 
 ## 👷  Executando o projeto
  #### Clone o repositório:
   ```
-  git clone https://github.com/FranciscoBraaz/agiletv-front.git
+  git clone https://github.com/FranciscoBraaz/money-dashboard.git
   ```  
 #### Navegue para a pasta raíz:
 ```
-cd agiletv-front
+cd money-dashboard
 ```
 #### Criar arquivo .env na raíz do projeto
 ```
