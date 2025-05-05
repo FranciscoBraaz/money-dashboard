@@ -14,8 +14,7 @@ export function RoutesLayout({
   isNotFound = false,
 }: RoutesLayoutProps) {
   const loggedUserLocalStorage = localStorage.getItem("money-user");
-  const loggedUserSessionStore = sessionStorage.getItem("money-user");
-  const userIsLogged = loggedUserLocalStorage || loggedUserSessionStore;
+  const userIsLogged = loggedUserLocalStorage;
 
   if (isPublic) {
     if (userIsLogged || isNotFound) return <Navigate to="/" />;

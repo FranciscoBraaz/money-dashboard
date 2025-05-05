@@ -26,7 +26,7 @@ function SignIn() {
         >
           <Form
             id="sign-in"
-            initialValues={{ email: "", passowrd: "", remember: true }}
+            initialValues={{ email: "", passowrd: "" }}
             onFinish={handleSignIn}
           >
             <Form.Item

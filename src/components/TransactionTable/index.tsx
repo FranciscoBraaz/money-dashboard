@@ -22,7 +22,7 @@ function TransactionTable() {
           </tr>
         </thead>
         <tbody>
-          {transactions.map((transaction: Transaction) => {
+          {transactions?.map((transaction: Transaction) => {
             return (
               <tr key={transaction.id}>
                 <td>{transaction.title}</td>

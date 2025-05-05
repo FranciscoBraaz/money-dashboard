@@ -24,12 +24,10 @@ function Header() {
       <DepositModal
         isOpen={isDepositOpen}
         onRequestClose={() => setIsDepositOpen(false)}
-        handleDeposit={(values: { accountNumber: string; amount: number }) =>
-          makeDeposit.mutate({
-            accountNumber: values.accountNumber,
-            value: values.amount,
-          })
-        }
+        isLoading={makeDeposit.isPending}
+        handleDeposit={({ amount }) => {
+          makeDeposit.mutate({ value: Number(amount) });
+        }}
       />
     </header>
   );

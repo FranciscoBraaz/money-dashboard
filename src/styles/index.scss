@@ -183,17 +183,17 @@ h4 {
   }
 }
 
-// .Toastify__toast--success {
-//   background-color: variables.$main-default !important;
-//   color: variables.$white;
-// }
+.Toastify__toast--success {
+  background-color: variables.$green-default !important;
+  color: variables.$white;
+}
 
-// .Toastify__toast--error {
-//   background-color: #e5484d !important;
-//   color: variables.$white;
-// }
+.Toastify__toast--error {
+  background-color: #e5484d !important;
+  color: variables.$white;
+}
 
-// .Toastify__toast--info {
-//   background-color: #0090ff !important;
-//   color: variables.$white;
-// }
+.Toastify__toast--info {
+  background-color: #0090ff !important;
+  color: variables.$white;
+}

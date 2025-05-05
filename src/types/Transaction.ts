@@ -5,9 +5,3 @@ export interface Transaction {
   value: string;
   createdAt: string;
 }
-
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-}

@@ -20,7 +20,7 @@ export function useSignIn() {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  async function handleSignIn({ email, password, remember }: SignInData) {
+  async function handleSignIn({ email, password }: SignInData) {
     try {
       setIsLoading(true);
 
@@ -29,12 +29,7 @@ export function useSignIn() {
         password,
       });
 
-      if (remember) {
-        localStorage.setItem("money-user", JSON.stringify(data));
-      } else {
-        sessionStorage.setItem("money-user", JSON.stringify(data));
-      }
-
+      localStorage.setItem("money-user", JSON.stringify(data));
       dispatch({ type: "CHANGE_USER", payload: data });
       api.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
       setIsLoading(false);

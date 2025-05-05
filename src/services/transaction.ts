@@ -14,8 +14,10 @@ const typesMap: Record<string, string> = {
   deposit: "Depósito",
 };
 
-export async function getTransactions() {
-  const { data } = await api.get(`/transaction-history`);
+export async function getTransactions(accountNumber: string) {
+  const { data } = await api.get(
+    `/transaction-history/by-user/${accountNumber}`
+  );
 
   const formattedData = data.map((transaction: Transaction) => ({
     ...transaction,

@@ -1,12 +1,14 @@
-import { User } from "../types/Transaction";
+import { User } from "../types/User";
 
-const initialState = {
-  user: {},
+interface UserState {
+  user: User | null;
+}
+
+const initialState: UserState = {
+  user: null,
 };
 
-type Action =
-  | { type: "CHANGE_USER"; payload: Record<string, User> }
-  | { type: "OTHER_ACTION" };
+type Action = { type: "CHANGE_USER"; payload: User } | { type: "OTHER_ACTION" };
 
 function reducer(state = initialState, action: Action) {
   switch (action.type) {
