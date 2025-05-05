@@ -35,9 +35,16 @@ Aplicação desenvolvida com o objetivo de praticar os conhecimentos em React e 
 - Ant Design
 
 ### 🛠️ Testando aplicação
-Usuário já criado para testes (É possível criar outros usuários):
-E-mail: teste3@gmail.com
-Senha: 12345678
+Usuários já criados para facilitar testes (É possível criar outros usuários):
+- Usuário 1:
+  - E-mail: teste3@gmail.com
+  - Senha: 12345678
+  - Conta: 3025338
+- Usuário 2:
+  - E-mail: teste@gmail.com
+  - Senha: 12345678
+  - Conta: 9530239
+
 
 ## 👷  Executando o projeto
  #### Clone o repositório:
