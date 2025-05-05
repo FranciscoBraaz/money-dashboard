@@ -27,7 +27,6 @@ function useDeposit() {
     },
     onError: () => {
       toast.error("Houve um erro ao depositar o valor");
-      setIsDepositOpen(false);
     },
   });
 

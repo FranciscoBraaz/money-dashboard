@@ -14,21 +14,27 @@ import { FormInput } from "../FormInput";
 // Styles
 import "./index.scss";
 
-interface DepositModalProps {
+interface TransferModalProps {
   isOpen: boolean;
   isLoading?: boolean;
   onRequestClose: () => void;
-  handleDeposit: ({ amount }: { amount: number }) => void;
+  handleTransfer: ({
+    amount,
+    accountNumber,
+  }: {
+    amount: number;
+    accountNumber: string;
+  }) => void;
 }
 
 Modal.setAppElement("#root");
 
-function DepositModal({
+function TransferModal({
   isOpen,
   isLoading,
   onRequestClose,
-  handleDeposit,
-}: DepositModalProps) {
+  handleTransfer,
+}: TransferModalProps) {
   return (
     <Modal
       isOpen={isOpen}
@@ -44,13 +50,25 @@ function DepositModal({
         <img src={closeImg} alt="Fechar modal" />
       </button>
 
-      <section className="deposit-modal">
-        <h2>Depositar dinheiro</h2>
+      <section className="transfer-modal">
+        <h2>Transferir dinheiro</h2>
         <Form
-          id="deposit"
-          initialValues={{ amount: "" }}
-          onFinish={handleDeposit}
+          id="transfer-modal"
+          initialValues={{ amount: "", accountNumber: "" }}
+          onFinish={handleTransfer}
         >
+          <Form.Item
+            name="accountNumber"
+            normalize={(value) => onlyNumbers(value)}
+            rules={[
+              {
+                required: true,
+                message: "O número da conta é obrigatório",
+              },
+            ]}
+          >
+            <FormInput label="Número da conta" placeholder="Número da conta" />
+          </Form.Item>
           <Form.Item
             name="amount"
             normalize={(value) => onlyNumbers(value)}
@@ -61,16 +79,16 @@ function DepositModal({
               },
             ]}
           >
-            <FormInput label="Valor" placeholder="Valor do depósito" />
+            <FormInput label="Valor" placeholder="Valor da transferência" />
           </Form.Item>
         </Form>
 
-        <button type="submit" form="deposit" disabled={isLoading}>
-          {isLoading ? <Loader /> : "Depositar"}
+        <button type="submit" form="transfer-modal" disabled={isLoading}>
+          {isLoading ? <Loader /> : "Transferir"}
         </button>
       </section>
     </Modal>
   );
 }
 
-export default DepositModal;
+export default TransferModal;
