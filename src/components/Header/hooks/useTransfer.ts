@@ -33,6 +33,7 @@ function useTransfer() {
     onSuccess: () => {
       toast.success("A transferência foi realizada");
       queryClient.invalidateQueries({ queryKey: ["transaction-history"] });
+      queryClient.invalidateQueries({ queryKey: ["summary"] });
       setIsTransferOpen(false);
     },
     onError: () => {

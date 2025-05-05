@@ -17,6 +17,7 @@ function useUndoTransfer() {
     onSuccess: () => {
       toast.success("A transferência foi desfeita");
       queryClient.invalidateQueries({ queryKey: ["transaction-history"] });
+      queryClient.invalidateQueries({ queryKey: ["summary"] });
       setIsTransferConfirmModalOpen(false);
     },
     onError: () => {

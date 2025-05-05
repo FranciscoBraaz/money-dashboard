@@ -8,4 +8,23 @@ function onlyNumbers(value: string) {
   return value.replace(/\D/g, "");
 }
 
-export { formatDate, onlyNumbers };
+function returnSummaryValue(
+  isLoading: boolean,
+  isError: boolean,
+  value: number | undefined
+) {
+  if (isLoading) {
+    return "Carregando...";
+  }
+
+  if (isError) {
+    return "Erro ao carregar";
+  }
+
+  return new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format(value ?? 0);
+}
+
+export { formatDate, onlyNumbers, returnSummaryValue };

@@ -1,11 +1,17 @@
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
 import totalImg from "../../assets/total.svg";
+import { returnSummaryValue } from "../../utils";
+import useGetSummary from "./hooks/useGetSummary";
 
 // Styles
 import "./index.scss";
 
 function Summary() {
+  const { summary, isLoading, isError } = useGetSummary();
+
+  console.log(summary);
+
   return (
     <section className="summary">
       <div>
@@ -14,10 +20,7 @@ function Summary() {
           <img src={incomeImg} alt="Entradas" />
         </header>
         <strong>
-          {new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-          }).format(47386)}
+          {returnSummaryValue(isLoading, isError, summary?.deposits)}
         </strong>
       </div>
       <div>
@@ -26,10 +29,7 @@ function Summary() {
           <img src={outcomeImg} alt="Saídas" />
         </header>
         <strong>
-          {new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-          }).format(38733)}
+          {returnSummaryValue(isLoading, isError, summary?.withdraws)}
         </strong>
       </div>
       <div className="highlight-background">
@@ -38,10 +38,7 @@ function Summary() {
           <img src={totalImg} alt="Total" />
         </header>
         <strong>
-          {new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-          }).format(23286)}
+          {returnSummaryValue(isLoading, isError, summary?.balance)}
         </strong>
       </div>
     </section>

@@ -44,6 +44,7 @@ function TransactionTable() {
           </tr>
         </thead>
         <tbody>
+          {transactions?.length === 0 && <p>Nenhuma transação encontrada</p>}
           {transactions?.map((transaction: Transaction) => (
             <TransactionTableRow
               key={transaction.id}

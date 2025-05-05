@@ -17,6 +17,7 @@ function useUndoDeposit() {
     onSuccess: () => {
       toast.success("O depósito foi desfeito");
       queryClient.invalidateQueries({ queryKey: ["transaction-history"] });
+      queryClient.invalidateQueries({ queryKey: ["summary"] });
       setIsDepositConfirmModalOpen(false);
     },
     onError: () => {

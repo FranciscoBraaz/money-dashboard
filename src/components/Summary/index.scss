@@ -9,9 +9,11 @@
 
   div {
     background: variables.$white;
-    padding: 24px 32px;
+    padding: 16px 24px;
     border-radius: 0.25px;
     color: variables.$text-primary;
+    width: 280px;
+
     header {
       display: flex;
       align-items: center;
@@ -24,6 +26,9 @@
       margin-top: 16px;
       font-size: 32px;
       line-height: 48px;
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
 
     &.highlight-background {

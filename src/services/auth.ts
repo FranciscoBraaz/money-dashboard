@@ -21,3 +21,7 @@ export async function login({
 }) {
   return api.post("/users/login", { email, password });
 }
+
+export async function getSummary(accountNumber: string) {
+  return await api.get(`/users/summary/${accountNumber}`);
+}

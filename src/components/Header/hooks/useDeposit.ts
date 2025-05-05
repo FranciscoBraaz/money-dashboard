@@ -23,6 +23,7 @@ function useDeposit() {
     onSuccess: () => {
       toast.success("O valor foi depositado");
       queryClient.invalidateQueries({ queryKey: ["transaction-history"] });
+      queryClient.invalidateQueries({ queryKey: ["summary"] });
       setIsDepositOpen(false);
     },
     onError: () => {
