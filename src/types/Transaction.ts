@@ -3,5 +3,7 @@ export interface Transaction {
   title: string;
   type: string;
   value: string;
+  referenceId: string;
+  alreadyReversed: boolean;
   createdAt: string;
 }

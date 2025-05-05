@@ -14,30 +14,55 @@
 
     & > section {
       display: flex;
+      flex-direction: column;
       gap: 8px;
+
+      & > div:first-child {
+        display: flex;
+        gap: 8px;
+
+        button {
+          font: 16px;
+          color: #fff;
+          border: 0;
+          padding: 0 32px;
+          border-radius: 4px;
+          height: 48px;
+          transition: filter 0.2s;
+
+          &:hover {
+            filter: brightness(0.9);
+          }
+
+          &:first-child {
+            background: variables.$green-default;
+          }
+
+          &:last-child {
+            background: variables.$blue-light;
+          }
+        }
+      }
     }
+  }
+}
 
-    button {
-      font: 16px;
-      color: #fff;
-      border: 0;
-      padding: 0 32px;
-      border-radius: 4px;
-      height: 48px;
-      transition: filter 0.2s;
+.header__user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 
-      &:hover {
-        filter: brightness(0.9);
-      }
+  & > p {
+    color: #fff;
+    font-size: 16px;
+  }
 
-      &:first-child {
-        background: variables.$green-default;
-      }
-
-      &:last-child {
-        background: variables.$blue-light;
-      }
-    }
+  & > button {
+    background-color: variables.$red-default;
+    color: #fff;
+    padding: 4px 16px;
+    border-radius: 4px;
   }
 }
 

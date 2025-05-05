@@ -1,8 +1,19 @@
+import { useSelector } from "react-redux";
+
+// Assets
 import logoImg from "../../assets/logo.svg";
-import DepositModal from "../DepositModal";
-import TransferModal from "../TransferModal";
+
+// Store
+import { RootState } from "../../store";
+
+// Custom hooks
 import useDeposit from "./hooks/useDeposit";
 import useTransfer from "./hooks/useTransfer";
+import useLogout from "./hooks/useLogout";
+
+// Components
+import DepositModal from "../DepositModal";
+import TransferModal from "../TransferModal";
 
 // Styles
 import "./index.scss";
@@ -10,20 +21,32 @@ import "./index.scss";
 function Header() {
   const { setIsDepositOpen, isDepositOpen, makeDeposit } = useDeposit();
   const { setIsTransferOpen, isTransferOpen, makeTransfer } = useTransfer();
+  const { logout } = useLogout();
+
+  const { user } = useSelector((state: RootState) => state?.app);
 
   return (
     <header className="header">
       <div>
         <img src={logoImg} alt="Money-dashboard" />
         <section>
-          <button type="button" onClick={() => setIsDepositOpen(true)}>
-            Depositar
-          </button>
-          <button type="button" onClick={() => setIsTransferOpen(true)}>
-            Transferir
-          </button>
+          <div>
+            <button type="button" onClick={() => setIsDepositOpen(true)}>
+              Depositar
+            </button>
+            <button type="button" onClick={() => setIsTransferOpen(true)}>
+              Transferir
+            </button>
+          </div>
+          <div className="header__user">
+            <p>Olá, {user?.name}</p>
+            <button className="header__avatar" type="button" onClick={logout}>
+              Sair
+            </button>
+          </div>
         </section>
       </div>
+
       <DepositModal
         isOpen={isDepositOpen}
         onRequestClose={() => setIsDepositOpen(false)}

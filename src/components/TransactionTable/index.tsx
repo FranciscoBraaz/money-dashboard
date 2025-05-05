@@ -1,14 +1,36 @@
-// Styles
-import { Undo } from "lucide-react";
+import { HashLoader } from "react-spinners";
+
+// Types
 import { Transaction } from "../../types/Transaction";
+
+// Custom hooks
 import useGetTransactions from "./hooks/useGetTransactions";
+
+// Components
+import TransactionTableRow from "../TransactionTableRow";
+
+// Styles
 import "./index.scss";
 
 function TransactionTable() {
   const { transactions, isLoading, isError } = useGetTransactions();
 
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error</div>;
+  if (isLoading) {
+    return (
+      <div className="loading-table">
+        <HashLoader color="#5429cc" />
+        <p>Carregando transações</p>
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="error-table">
+        <p>Erro ao carregar transações</p>
+      </div>
+    );
+  }
 
   return (
     <section className="transaction-table">
@@ -22,30 +44,12 @@ function TransactionTable() {
           </tr>
         </thead>
         <tbody>
-          {transactions?.map((transaction: Transaction) => {
-            return (
-              <tr key={transaction.id}>
-                <td>{transaction.title}</td>
-                <td className={transaction.type}>
-                  {transaction.type === "transfer_sended" && "-"}{" "}
-                  {new Intl.NumberFormat("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  }).format(Number(transaction.value))}
-                </td>
-                <td>
-                  {new Intl.DateTimeFormat("pt-BR").format(
-                    new Date(transaction.createdAt)
-                  )}
-                </td>
-                <td>
-                  <button className="transaction-table__undo">
-                    <Undo />
-                  </button>
-                </td>
-              </tr>
-            );
-          })}
+          {transactions?.map((transaction: Transaction) => (
+            <TransactionTableRow
+              key={transaction.id}
+              transaction={transaction}
+            />
+          ))}
         </tbody>
       </table>
     </section>

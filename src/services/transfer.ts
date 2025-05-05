@@ -15,3 +15,7 @@ export async function createTransfer({
     value,
   });
 }
+
+export async function reverseTransfer(id: string) {
+  await api.patch(`/transfer/reverse/${id}`);
+}
