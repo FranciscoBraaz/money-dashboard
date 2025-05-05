@@ -9,7 +9,7 @@
 
     padding: 2rem 1rem 12rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 
     & > section {
@@ -67,10 +67,23 @@
   }
 }
 
+.header__account {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  gap: 4px;
+
+  & > strong {
+    font-weight: 500;
+  }
+}
+
 @media screen and (max-width: variables.$screen-sm) {
   .header {
     & > div {
       flex-direction: column;
+      align-items: center;
       gap: 16px;
     }
   }

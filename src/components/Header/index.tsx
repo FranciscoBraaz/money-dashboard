@@ -44,6 +44,10 @@ function Header() {
               Sair
             </button>
           </div>
+          <p className="header__account">
+            <strong>Nº da conta:</strong>
+            <span>{user?.accountNumber}</span>
+          </p>
         </section>
       </div>
 
