@@ -31,7 +31,7 @@ Aplicação desenvolvida com o objetivo de praticar os conhecimentos em React e 
 - TypeScript
 - React Query
 - SASS
-- Ant
+- Ant Design
 
 ## 👷  Executando o projeto
  #### Clone o repositório:
