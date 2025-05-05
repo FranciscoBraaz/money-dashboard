@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Flex, Typography } from "antd";
 import { NavLink, useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 const { Title, Text } = Typography;
 
@@ -9,7 +10,6 @@ import { FormButton } from "../FormButton";
 
 // Styles
 import "./index.scss";
-import { ArrowLeft } from "lucide-react";
 
 type LinkProps = {
   text: string;

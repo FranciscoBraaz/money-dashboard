@@ -1,7 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import { getTransactions } from "../../../services/transaction";
 import { useSelector } from "react-redux";
+
+// Types
 import { RootState } from "../../../store";
+
+// Services
+import { getTransactions } from "../../../services/transaction";
 
 function useGetTransactions() {
   const { user } = useSelector((state: RootState) => state?.app);

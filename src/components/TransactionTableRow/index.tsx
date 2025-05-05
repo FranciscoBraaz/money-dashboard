@@ -5,13 +5,13 @@ import { Transaction } from "../../types/Transaction";
 
 // Custom hooks
 import useUndoTransfer from "./hooks/useUndoTransfer";
+import useUndoDeposit from "./hooks/useUndoDeposit";
 
 // Components
 import ConfirmModal from "../ConfirmModal";
 
 // Styles
 import "./index.scss";
-import useUndoDeposit from "./hooks/useUndoDeposit";
 
 interface TransactionTableRowProps {
   transaction: Transaction;
