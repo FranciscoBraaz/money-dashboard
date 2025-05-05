@@ -45,7 +45,7 @@ cd money-dashboard
 ```
 #### Criar arquivo .env na raíz do projeto
 ```
-VITE_API_URL = <URL LOCAL DA SUA API> 
+VITE_API_URL=http://localhost:3001
 ```
 #### Baixar as dependências
 ```
