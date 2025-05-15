@@ -48,11 +48,7 @@ function TransactionTableRow({ transaction }: TransactionTableRowProps) {
           currency: "BRL",
         }).format(Number(transaction.value))}
       </td>
-      <td>
-        {new Intl.DateTimeFormat("pt-BR").format(
-          new Date(transaction.createdAt)
-        )}
-      </td>
+      <td>{transaction.createdAt}</td>
       <td>
         <button
           className="transaction-table__undo"
